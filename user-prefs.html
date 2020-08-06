@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Place Keeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="populateFormValues()">
+    <!-- Toast -->
+    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+        <div class="toast-header">
+            <strong class="mr-auto">Data Saved</strong>
+            <small>Just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Data will be available the next time you visit this website </div>
+    </div>
+
+    <div class="container">
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">Place Keeper</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-prefs.html">Preferences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">Map</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <h1>User Preferences</h1>
+
+        <form onsubmit="onSaveForm(event)">
+
+            <div class="form-group">
+                <label for="favcolor">Select your favorite color:</label>
+                <input type="color" id="favcolor" name="favcolor" onchange="onColorChange(this.value)">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" />
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="email" id="contact" name="contact" list="contactList" />
+            </div>
+            <div class="form-group">
+                <label for="dob">Age:</label></td>
+                <input type="range" id="age" name="age" min="18" max="120" value="26" onchange="showAge(this.value);" />
+                <span id="sAge">26</span>
+            </div>
+
+
+            <button class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+
+
+    <!-- BS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous">
+    </script>
+    <!-- My JS -->
+    <script src="/js/storage-service.js"></script>
+    <script src="js/main-service.js"></script>
+    <script src="js/controller.js"></script>
+
+</body>
+
+</html>
